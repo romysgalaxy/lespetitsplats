@@ -5,11 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
 </head>
 <body>
-    <div class="recipeCard"></div>
+    <header>
+      <div class="container-img">
+        <img src="./assets/logo.svg" alt="logo" class="header_logo">
+      </div>
+    </header>  
+      <div class="header_search">
+        <h1>Cherchez parmi plus de 1500 recettes<br>du quotidien, simples et délicieuses.</h1>
+        <div class="header_searchBar">
+          <input type="text" placeholder="Rechercher une recette, un ingrédient, ..." class="header_searchBar-input">
+          <div class="header_container-img">
+            <img src="./assets/search-white.svg" alt="search icon">
+          </div>
+        </div>
+        <div class="header_searchBar-error">
+          <p>Votre recherche doit contenir au minimum 3 caractères</p>
+        </div>
+        <div class="header_searchBar-results">
+          <!-- tags -->
+        </div>
+      </div>
+      <section class="container_recipe">
+        <div class="container_header">
+          <div class="container_filter">
+            <div class="filter filter_ingredient">
+              <div class="filter_header" id="ingredient">
+                  <p class="filter_title">Ingredients</p>
+                  <img src="./assets/chevron-down.svg" alt="chevron icon" class="filter_chevronDown_ingredient">
+                  <img src="./assets/chevron-up.svg" alt="chevron icon" class="filter_chevronUp_ingredient">
+              </div>
+            </div>
+            <div class="filter filter_appliance">
+              <div class="filter_header" id="appliance">
+                <p class="filter_title">Appareils</p>
+                <img src="./assets/chevron-down.svg" alt="chevron icon" class="filter_chevronDown_appliance">
+                <img src="./assets/chevron-up.svg" alt="chevron icon" class="filter_chevronUp_appliance">
+              </div> 
+            </div>
+            <div class="filter filter_ustensil">
+              <div class="filter_header" id="ustensil">
+                <p class="filter_title">Ustensiles</p>
+                <img src="./assets/chevron-down.svg" alt="chevron icon" class="filter_chevronDown_ustensil">
+                <img src="./assets/chevron-up.svg" alt="chevron icon" class="filter_chevronUp_ustensil">
+              </div>
+            </div>
+          </div>
+          <div class="recipeNumber">
+            <!-- getTheNumberOfRecipes -->
+          </div>
+        </div>
+        <div class="recipeCard">
+          <!-- getAllRecipes -->
+        </div>
+      </section>
   <script src="./scripts/utils/getData.js"></script>
   <script src="./scripts/factories/recipes.js"></script>
+  <script src="./scripts/factories/filter.js"></script>
+  <script src="./scripts/factories/searchBar.js"></script>
   <script src="./scripts/pages/index.js"></script>
 </body>
 </html>

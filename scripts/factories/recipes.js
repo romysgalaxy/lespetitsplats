@@ -1,11 +1,14 @@
 class Recipes {
+
     constructor(data) {
         this.data = data
-        //this.image = this.data.image
-        // this.imageUrl = `./assets/recipes/${this.image}`
     }
 
+    /**
+     * Create recipe card
+     */
     createCard() {
+
         const recipeCard = document.querySelector('.recipeCard')
         const recipes = this.data.recipes
 
@@ -58,9 +61,20 @@ class Recipes {
             ingredientsContainer.appendChild(ingredientList);
             content.appendChild(ingredientsContainer)
             card.appendChild(content)
-
             recipeCard.appendChild(card)
         });
 
+    }
+
+    /**
+     * Display the total number of recipe
+     */
+    numberOfRecipe() {
+        const recipeNumber = document.querySelector('.recipeNumber')
+        const recipes = this.data.recipes
+        const totalRecipes = recipes.length
+        const p = document.createElement('p')
+        p.textContent = `${totalRecipes} recette${totalRecipes > 1 ? 's' : ''}`
+        recipeNumber.appendChild(p)
     }
 }

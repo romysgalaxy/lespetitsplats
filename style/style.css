@@ -1,28 +1,239 @@
-@font-face {
-    font-family: Manrope;
-    src:local("./style/fonts/Manrope.ttf");
-}
-
-@font-face {
-    font-family: Anton;
-    src:local("./style/fonts/Anton.ttf");
-}
-
 * {
-    font-family: Manrope;
+    font-family: 'Manrope';
     font-size: 14px;
     font-weight: 400;
 }
 
 body {
     background-color: #E5E5E5;
+    margin: 0;
+}
+
+/* header */
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header .container-img {
+    width: 100%;
+    max-width: 1300px;
+    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.header_logo {
+    width: 200px;
+    top: 15px;
+    z-index: 1;
+}
+
+.header_search {
+    min-height: 667px;
+    background-image: url("../assets/hero.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 15px;
+}
+
+.header_search h1 {
+    font-size: 20px;
+    color: #FFD15B;
+    width: 100%;
+    text-align: center;
+    font-family: 'Anton';
+}
+
+.header_searchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.header_searchBar input {
+    height: 50px;
+    width: 95%;
+    max-width: 950px;
+    border-radius: 11px 0 0 11px;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+.header_searchBar input::placeholder {
+    font-size: 16px;
+    color: #7A7A7A;
+}
+
+.header_searchBar input:focus {
+    font-size: 16px;
+    color: black;
+}
+
+.header_searchBar input[type="text"] {
+    padding-left: 10px;
+}
+    
+.header_container-img {
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 0 11px 11px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_searchBar img {
+    background-color: #1B1B1B;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    right: 98px;
+}
+
+.header_searchBar-error {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header_searchBar-error p {
+    color: red;
+    font-size: 12px;
+}
+
+.header_searchBar-results {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header_searchBar-tag {
+    display: flex;
+    background-color: #FFD15B;
+    padding: 5px 20px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.header_searchBar-tag p {
+    margin-right: 10px;
+}
+
+.header_searchBar-tag img {
+    width: 20px;
+}
+
+/* section */
+
+.container_recipe {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+/* filter */
+
+.container_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px 30px 10px;
+}
+
+.container_filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    background-color: white;
+    border-radius: 11px;
+    width: 195px;
+    height: 56px;
+    padding: 0 16px;
+    margin: 7px;
+}
+
+.filter_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter_title {
+    font-size: 16px;
+}
+
+.filter img {
+    width: 25px;
+}
+
+.filter_chevronUp_ingredient, .filter_chevronUp_appliance, .filter_chevronUp_ustensil {
+    display: none;
+}
+
+.filter_input_ingredient, .filter_input_appliance, .filter_input_ustensil {
+    border: 1px solid #c6c6c6;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    padding: 0 5px;
+}
+
+
+.filter_input_ingredient input, .filter_input_appliance input, .filter_input_ustensil input {
+    border: none;
+    padding: 0;
+    outline: none;
+    height: 36px;
+    width: 80%;
+}
+
+.filter_search_ingredient, .filter_search_appliance, .filter_search_ustensil {
+    width: 25px;
+}
+
+.filter_cross_ingredient, .filter_cross_appliance, .filter_cross_ustensil {
+    width: 15px!important;
+}
+
+.recipeNumber p {
+    font-family: 'Anton';
+    font-size: 21px;
+}
+
+/* card */
+
+.recipeCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .card {
     position: relative;
     background-color: white;
     max-width: 380px;
+    min-width: 320px;
     border-radius: 21px;
+    width: 33.33%;
+    margin: 15px;
 }
 
 .card_img {
@@ -34,28 +245,25 @@ body {
 
 .card_label {
     position: absolute;
-    top: 13px;
-    left: 287px;
     background-color: #FFD15B;
     height: 26px;
     width: 63px;
     border-radius: 14px;
     font-size: 12px;
-    top: 13px;
-    left: 287px;
+    top: 8px;
+    left: 235px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .card_content {
-    padding: 32px 25px
+    padding: 10px 25px 25px 25px
 }
 
 .card_name {
     font-size: 18px;
     font-family: Anton;
-    font-weight: 400;
 }
 
 .card_title {
@@ -79,7 +287,7 @@ body {
     flex-wrap: wrap;
 }
 
-.card_ingredients li {
+.card_ingredients li {  
     width: 50%;
     margin: 10px 0;
 }
@@ -88,6 +296,76 @@ body {
     margin: 2px 0;
 }
 
+.card_ingredients li p:nth-child(1) {
+    font-weight: 500;
+}
+
 .card_ingredients li p:nth-child(2) {
     color : #7A7A7A;
+}
+
+/* media queries :  576, 768, 992, 1200 */
+
+@media only screen and (min-width: 576px) {
+    header {
+        display: flex;
+        margin-left: 25px;
+    }
+    header .container-img {
+        justify-content: start;
+        margin-top: 50px;
+    }
+    header .container-img img {
+        margin-left: 15px;
+    }
+    .header_search {
+        padding: 0 25px;
+    }
+    .header_search h1 {
+        font-size: 34px;
+    }
+    .header_searchBar input[type="text"] {
+        padding-left: 35px;
+    }
+    .container_header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .recipeNumber {
+        margin-right: 7px;
+    }
+    
+}
+
+@media only screen and (min-width: 992px) {
+    .header_logo {
+        top: 51px;
+        left: 69px
+    }
+    .header_search {
+        padding: 0 69px;
+    }
+    .header_search h1 {
+        font-size: 44px;
+    }
+    .header_searchBar input {
+        height: 72px;
+    }
+    .header_container-img {
+        height: 72px;
+        width: 72px;
+    }
+    .header_container-img img{
+        height: 50px;
+        width: 50px;
+    }
+    .container_filter {
+        flex-direction: row;
+    }
+    .card {
+        min-width: 380px;
+    }
+    .card_label {
+        left: 295px;
+    }
 }
